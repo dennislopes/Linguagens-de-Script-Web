@@ -1,0 +1,324 @@
+################################################################################
+let idade = 18;
+
+if (idade >= 18) {
+  console.log("Você pode dirigir.");
+} else {
+  console.log("Você ainda não pode dirigir.");
+}
+
+################################################################################
+let nota = 75;
+
+if (nota >= 90) {
+  console.log("Excelente!");
+} else if (nota >= 70) {
+  console.log("Bom!");
+} else {
+  console.log("Precisa melhorar.");
+}
+################################################################################
+let statusDoPedido = "entregue";
+let mensagem;
+
+switch (statusDoPedido) {
+  case "pendente":
+    mensagem = "Seu pedido está sendo preparado.";
+    break;
+  case "em transporte":
+    mensagem = "Seu pedido está a caminho!";
+    break;
+  case "entregue":
+    mensagem = "Seu pedido foi entregue com sucesso!";
+    break;
+  default:
+    mensagem = "Status do pedido desconhecido.";
+    break;
+}
+console.log(mensagem);
+
+################################################################################
+for (let i = 0; i < 5; i++) {
+  console.log("Contagem: " + i);
+}
+
+################################################################################
+let contador = 0;
+while (contador < 3) {
+  console.log("Contador: " + contador);
+  contador++;
+}
+################################################################################
+let numero = 5;
+do {
+  console.log("O número é " + numero);
+  numero++;
+} while (numero < 5);
+
+################################################################################
+// Array de números
+let numeros = [1, 2, 3, 4, 5];
+
+// Array de strings
+let frutas = ["Maçã", "Banana", "Morango"];
+
+// Array misto (não é uma boa prática, mas é possível)
+let misto = ["Olá", 10, true];
+
+################################################################################
+let primeiroNumero = numeros[0]; // Retorna: 1
+let segundaFruta = frutas[1];   // Retorna: "Banana"
+
+console.log(primeiroNumero)
+console.log(segundaNumero)
+################################################################################
+console.log(frutas.length)
+console.log(frutas.indexOf("Banana"))
+################################################################################
+const arr = [1, 2];
+arr.push(3);
+console.log(arr); // [1, 2, 3]
+################################################################################
+const arr = [1, 2, 3];
+const removido = arr.pop();
+console.log(removido); // 3
+console.log(arr); // [1, 2]
+################################################################################
+SINTAXE: array.shift();
+
+const arr = [1, 2, 3];
+const removido = arr.shift();
+console.log(removido); // 1
+console.log(arr); // [2, 3]
+
+let filaDeCarros = ["Fusca", "Brasília", "Kombi", "Variant"];
+// Saída: ["Fusca", "Brasília", "Kombi", "Variant"]
+console.log("Fila de carros original: ", filaDeCarros);
+// Remove o primeiro elemento ("Fusca")
+let carroRemovido = filaDeCarros.shift();
+// Saída: "Fusca"
+console.log("Carro removido: ", carroRemovido);
+// Saída: ["Brasília", "Kombi", "Variant"]
+console.log("Nova fila de carros: ", filaDeCarros);
+################################################################################
+SINTAXE: array.unshift(elemento1, elemento2, ...);
+
+const arr = [2, 3];
+arr.unshift(1);
+console.log(arr); // [1, 2, 3]
+
+let filaDePessoas = ["Ana", "Pedro", "João"];
+// Saída: ["Ana", "Pedro", "João"]
+console.log("Fila de pessoas original: ", filaDePessoas);
+// Adiciona um novo elemento ("Carla") no início
+let novoComprimento = filaDePessoas.unshift("Carla");
+// Saída: 4
+console.log("Novo comprimento da fila: ", novoComprimento);
+// Saída: ["Carla", "Ana", "Pedro", "João"]
+console.log("Nova fila de pessoas: ", filaDePessoas);
+################################################################################
+const numeros = [1, 2, 3];
+const dobrados = numeros.map(n => n * 2);
+console.log(dobrados); // [2, 4, 6]
+
+let numeros = [1, 2, 3, 4, 5];
+// Usando uma função tradicional
+const numerosDobrados = numeros.map(function(numero) {
+  return numero * 2;
+});
+// Usando uma Arrow Function (forma mais comum e moderna)
+const numerosAoQuadrado = numeros.map(numero => numero * numero);
+// Saída: [1, 2, 3, 4, 5]
+console.log("Array original: ", numeros);
+// Saída: [2, 4, 6, 8, 10]
+console.log("Array com números dobrados: ", numerosDobrados);
+// Saída: [1, 4, 9, 16, 25]
+console.log("Array com números ao quadrado: ", numerosAoQuadrado);
+################################################################################
+const numeros = [1, 2, 3, 4];
+const maioresQueDois = numeros.filter(n => n > 2);
+console.log(maioresQueDois); // [3, 4]
+
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Usando uma Arrow Function para o teste
+const numerosPares = numeros.filter(numero => numero % 2 === 0);
+// Saída: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log("Array original: ", numeros);
+// Saída: [2, 4, 6, 8, 10]
+console.log("Array com números pares: ", numerosPares);
+################################################################################
+const arr = [1, 2, 3, 4];
+const soma = arr.reduce((acumulador, valor) => acumulador + valor, 0);
+console.log(soma); // 10
+
+let precos = [10.50, 20.00, 35.75, 15.25];
+// A função de callback recebe o "total" (acumulador) e o "preco" (valor atual)
+const somaTotal = precos.reduce((total, preco) => {
+  return total + preco;
+}, 0); // O "0" é o valor inicial do acumulador
+// Saída: [10.5, 20, 35.75, 15.25]
+console.log("Preços: ", precos);
+// Saída: 81.5
+console.log("Soma total: ", somaTotal);
+
+let precos = [10.50, 20.00, 35.75, 15.25];
+const somaTotal = precos.reduce((total, preco) => total + preco, 0); 
+// Saída: [10.5, 20, 35.75, 15.25]
+console.log("Preços: ", precos);
+// Saída: 81.5
+console.log("Soma total: ", somaTotal);
+################################################################################
+const arr = [1, 2, 3];
+arr.forEach(n => console.log(n * 2));
+// Imprime 2, 4, 6 no console
+
+let nomes = ["Ana", "Bruno", "Carla", "Daniel"];
+// Usando uma Arrow Function
+nomes.forEach(nome => {
+  console.log("Olá, " + nome + "!");
+});
+################################################################################
+const arr = [1, 2, 3, 4];
+const encontrado = arr.find(n => n > 2);
+console.log(encontrado); // 3
+
+
+let pessoas = [
+  { nome: "Ana", idade: 22 },
+  { nome: "Bruno", idade: 28 },
+  { nome: "Carla", idade: 35 }
+];
+const pessoaMaiorQue25 = pessoas.find(pessoa => pessoa.idade > 25);
+// Saída: { nome: "Bruno", idade: 28 }
+console.log("Pessoa encontrada: ", pessoaMaiorQue25);
+
+// Se procurarmos por uma idade maior que 40, a saída será undefined
+const pessoaMaiorQue40 = pessoas.find(pessoa => pessoa.idade > 40);
+console.log("Pessoa encontrada: ", pessoaMaiorQue40);
+################################################################################
+let palavras = ["Olá", "mundo", "do", "JavaScript"];
+// Juntando os elementos com um espaço como separador
+const frase = palavras.join(" "); 
+// Saída: ["Olá", "mundo", "do", "JavaScript"] 
+console.log("Array original: ", palavras); 
+// Saída: "Olá mundo do JavaScript“
+console.log("String resultante: ", frase); 
+
+// Exemplo com um separador diferente
+const listaComHifens = palavras.join(" - ");
+// Saída: "Olá - mundo - do - JavaScript"
+console.log("String com hífens: ", listaComHifens);
+################################################################################
+function saudacao(nome) {
+  console.log("Olá, " + nome + "!");
+}
+
+saudacao("João"); // Saída: Olá, João!
+################################################################################
+function calcularArea(largura, altura) {
+  return largura * altura;
+};
+
+let area = calcularArea(10, 5);
+console.log(area); // Saída: 50
+################################################################################
+// Função com um único parâmetro e uma única linha de código
+const dobrar = numero => numero * 2;
+
+console.log(dobrar(7)); // Saída: 14
+
+// Função com múltiplos parâmetros
+const somar = (a, b) => a + b;
+
+console.log(somar(10, 20)); // Saída: 30
+################################################################################
+class Animal {
+constructor(nome) {
+this.nome = nome;
+}
+
+fazerSom() {
+console.log("Som genérico de animal");
+}
+}
+################################################################################
+let meuAnimal = new Animal("Rex");
+console.log(meuAnimal.nome);
+meuAnimal.fazerSom();
+################################################################################
+class ContaBancaria {
+  constructor(saldoInicial) {
+	this._saldo = saldoInicial; // Convenção: sublinhado para propriedades "privadas"
+  }
+  depositar(valor) {
+    if (valor > 0) {
+      this._saldo += valor;
+      console.log(`Depósito de R$${valor} realizado. `);
+    }
+ }
+  consultarSaldo() {
+    return this._saldo;
+  }
+}
+
+################################################################################
+const minhaConta = new ContaBancaria(100);
+minhaConta.depositar(50);
+console.log(`Saldo atual: R$${minhaConta.consultarSaldo()} `);
+################################################################################
+// Classe Pai (Superclasse)
+class Veiculo {
+  constructor(marca, modelo) {
+    this.marca = marca;
+    this.modelo = modelo;
+  }
+
+  apresentar() {
+    console.log(`Este é um ${this.marca} ${this.modelo}.`);
+  }
+}
+
+################################################################################
+// Classe Filha (Subclasse)
+class Carro extends Veiculo {
+  constructor(marca, modelo, ano) {
+    super(marca, modelo); // Chama o construtor do Veiculo
+    this.ano = ano;
+  }
+
+  acelerar() {
+    console.log("O carro está acelerando!");
+  }
+}
+
+################################################################################
+const meuCarro = new Carro("Honda", "Civic", 2022); 
+meuCarro.apresentar(); // Método herdado da classe pai 
+meuCarro.acelerar(); // Método da classe filha
+################################################################################
+// Classe Pai
+class Animal {
+  fazerSom() {
+    console.log("Som genérico de animal.");
+  }
+}
+
+// Classe Filha 1
+class Cachorro extends Animal {
+  // Sobrescreve o método da classe pai
+  fazerSom() {
+    console.log("Au au!");
+  }
+}
+
+################################################################################
+// Classe Filha 2
+class Gato extends Animal {
+  // Sobrescreve o método da classe pai
+  fazerSom() {
+    console.log("Miau!");
+  }
+}
+
+################################################################################
+
