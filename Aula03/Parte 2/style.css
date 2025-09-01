@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.5;
+}
+
+.spacer {
+  height: 16px;
+}
+
+.destacado {
+  background: yellow; 
+}
+
+.caixa {
+  width: 120px;
+  height: 120px;
+  background: lightblue;
+  margin-top: 16px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.caixa:focus {
+  box-shadow: 0 0 0 4px lightsteelblue;
+}
+
+button {
+  margin-right: 8px;
+  padding: 8px 12px;
+  border: 0;
+  background: blue;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
